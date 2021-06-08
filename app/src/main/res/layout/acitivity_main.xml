@@ -66,20 +66,22 @@
         android:layout_marginTop="@dimen/big"
         android:orientation="horizontal"
         app:constraint_referenced_ids="flowTextBlocks,buttonMore"
-        app:flow_horizontalAlign="center"
+        app:flow_horizontalAlign="start"
         app:flow_horizontalStyle="spread_inside"
         app:flow_verticalAlign="center"
-        app:flow_wrapMode="chain"
+        app:flow_wrapMode="aligned"
         app:layout_constraintEnd_toEndOf="@id/safeAreaEnd"
         app:layout_constraintStart_toStartOf="@id/safeAreaStart"
         app:layout_constraintTop_toBottomOf="@id/thumbnail_card" />
 
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/flowTextBlocks"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:constraint_referenced_ids="songName,artistName"
+        app:layout_constraintStart_toStartOf="@id/safeAreaStart"
+        app:layout_constraintEnd_toEndOf="@id/safeAreaEnd"
         app:flow_horizontalAlign="start"
         app:flow_horizontalStyle="packed"
         app:flow_verticalAlign="top"
@@ -102,18 +104,22 @@
     <TextView
         android:id="@+id/songName"
         style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/song_name"
         android:textColor="@color/gray1"
         android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/song_name"/>
+        tools:layout_editor_absoluteY="434dp" />
+
     <TextView
         android:id="@+id/artistName"
-        android:layout_width="wrap_content"
         style="@style/TextAppearance.AppCompat.Headline"
-        android:textColor="@color/pink"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/artist_name"/>
+        android:text="@string/artist_name"
+        android:textColor="@color/pink"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="494dp" />
 
     <SeekBar
         android:id="@+id/seekBar"
