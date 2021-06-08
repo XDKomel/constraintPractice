@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ConstraintsPractice</string>
+    <string name="song_name">Blinding Lights</string>
+    <string name="artist_name">The Weeknd</string>
+    <string name="time_now">2:53</string>
+    <string name="time_remaining">-0:29</string>
+    <string name="lorem_ipsum">Amet ut fringilla fermentum massa faucibus sed in eget tellus. Adipiscing consectetur gravida cursus nisl molestie. Egestas ornare ipsum non pharetra neque vitae. Turpis cursus vel posuere lorem viverra mattis purus phasellus.</string>
+</resources>

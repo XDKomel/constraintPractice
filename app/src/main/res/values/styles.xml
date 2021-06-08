@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MySeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressTint">@color/light_gray1</item>
+        <item name="android:progressBackgroundTint">@color/light_gray2</item>
+        <item name="android:thumbTint">@color/light_gray1</item>
+    </style>
+</resources>

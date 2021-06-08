@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/safeAreaStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/safeAreaEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/thumbnailStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="32dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/thumbnailEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="32dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/safeAreaTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="24dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/safeAreaBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/thumbnail_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/common"
+        app:cardElevation="@dimen/common"
+        app:layout_constraintEnd_toStartOf="@+id/thumbnailEnd"
+        app:layout_constraintStart_toStartOf="@+id/thumbnailStart"
+        app:layout_constraintTop_toTopOf="@+id/safeAreaTop">
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/thumbnail"
+             />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big"
+        android:orientation="horizontal"
+        app:constraint_referenced_ids="flowTextBlocks,buttonMore"
+        app:flow_horizontalAlign="center"
+        app:flow_horizontalStyle="spread_inside"
+        app:flow_verticalAlign="center"
+        app:flow_wrapMode="chain"
+        app:layout_constraintEnd_toEndOf="@id/safeAreaEnd"
+        app:layout_constraintStart_toStartOf="@id/safeAreaStart"
+        app:layout_constraintTop_toBottomOf="@id/thumbnail_card" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flowTextBlocks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:constraint_referenced_ids="songName,artistName"
+        app:flow_horizontalAlign="start"
+        app:flow_horizontalStyle="packed"
+        app:flow_verticalAlign="top"
+        app:flow_verticalStyle="packed"
+        app:flow_wrapMode="chain" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/buttonMore"
+        app:cardCornerRadius="@dimen/big"
+        app:cardElevation="@dimen/zero">
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_pink"
+            app:srcCompat="@drawable/ic_baseline_more_horiz_24" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/songName"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/gray1"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/song_name"/>
+    <TextView
+        android:id="@+id/artistName"
+        android:layout_width="wrap_content"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/pink"
+        android:layout_height="wrap_content"
+        android:text="@string/artist_name"/>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/MySeekBar"
+        android:layout_marginTop="@dimen/common"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flow" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/timeTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:constraint_referenced_ids="timeNow,timeRemaining"
+        app:flow_horizontalStyle="spread_inside"
+        app:flow_wrapMode="chain"
+        android:layout_marginTop="@dimen/zero"
+        app:layout_constraintEnd_toStartOf="@+id/safeAreaEnd"
+        app:layout_constraintStart_toStartOf="@+id/safeAreaStart"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"/>
+
+    <TextView
+        android:id="@+id/timeNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/light_gray1"
+        android:text="@string/time_now"/>
+    <TextView
+        android:id="@+id/timeRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/light_gray1"
+        android:text="@string/time_remaining"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
